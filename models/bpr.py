@@ -122,7 +122,7 @@ class BPR(object):
 
         # Training
         for i in tqdm(range(epoch)):
-            if self.uniform:
+            if not  self.uniform:
                 batches = self.get_uniform_batches(rating_matrix, self.batch_size)
             else:
                 batches = self.get_batches(user_item_pairs, rating_matrix, self.num_items, self.batch_size)
